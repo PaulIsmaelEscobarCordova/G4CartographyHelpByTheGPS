@@ -298,6 +298,81 @@ public class G4Cartography {
                                                         
                                 } 
                             }while(option != 3);
+                            
+                            case 2:
+                            
+                            do {
+                                System.out.println("Area Calculator");
+                                System.out.println("Please Choose the Number -> ");
+                                System.out.println("1. ==> 3 Points");
+                                System.out.println("2. ==> 4 Points");
+                                System.out.println("3. ==> 5 Points");
+                                System.out.println("0. ==> Exit");
+                                option = input.nextInt();
+                                        
+                                switch(option){
+            
+                                    case 1: 
+                                        double px1;
+                                        double px2;
+                                        double px3;
+                                        double py1;
+                                        double py2;
+                                        double py3;
+                                        double area;
+                                        System.out.println("Enter Px1 value -> ");
+                                        px1 = input.nextDouble();
+                                        System.out.println("Enter Py1 value -> ");
+                                        py1 = input.nextDouble();
+                                        System.out.println("Enter Px2 value -> ");
+                                        px2 = input.nextDouble();
+                                        System.out.println("Enter Py2 value -> ");
+                                        py2 = input.nextDouble();
+                                        System.out.println("Enter Px3 value -> ");
+                                        px3 = input.nextDouble();
+                                        System.out.println("Enter Py3 value -> ");
+                                        py3 = input.nextDouble();
+                                        
+                                        area = Math.sqrt((px2 - px1)*(px2 - px1)+(py2 - py1)*(py2 - py1))
+                                                *Math.sqrt((px3 - px2)*(px3 - px2)+(py3 - py2)*(py3 - py2));
+                                                
+                                        System.out.println("The Area is: \n"
+                                        + area/2);                                        
+                                        break;
+                                                
+                                    case 2: 
+                                        double px11;
+                                        double px22;
+                                        double px33;
+                                        double px44;
+                                        double py11;
+                                        double py22;
+                                        double py33;
+                                        double py44;
+                                        double area2;
+                                        
+                                        System.out.println("Enter Px1 value -> ");
+                                        px11 = input.nextDouble();
+                                        System.out.println("Enter Py1 value -> ");
+                                        py11 = input.nextDouble();
+                                        System.out.println("Enter Px2 value -> ");
+                                        px22 = input.nextDouble();
+                                        System.out.println("Enter Py2 value -> ");
+                                        py22 = input.nextDouble();
+                                        System.out.println("Enter Px3 value -> ");
+                                        px33 = input.nextDouble();
+                                        System.out.println("Enter Py3 value -> ");
+                                        py33 = input.nextDouble();
+                                        System.out.println("Enter Px4 value -> ");
+                                        px44 = input.nextDouble();
+                                        System.out.println("Enter Py4 value -> ");
+                                        py44 = input.nextDouble();
+                                        
+                                        area2 = Math.sqrt((px22 - px11)*(px22 - px11)+(py22 - py11)*(py22 - py11))
+                                                *Math.sqrt((px33 - px22)*(px33 - px22)+(py33 - py22)*(py33 - py22));
+                                        System.out.println("The Area is: \n"
+                                        + area2);
+                                        break;
                                     
 
         }
