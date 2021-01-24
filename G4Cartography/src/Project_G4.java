@@ -373,8 +373,90 @@ public class G4Cartography {
                                         System.out.println("The Area is: \n"
                                         + area2);
                                         break;
+                                        
+                                    case 3: 
+                                        double px111;
+                                        double px222;
+                                        double px333;
+                                        double px444;
+                                        double px555;
+                                        double py111;
+                                        double py222;
+                                        double py333;
+                                        double py444;
+                                        double py555;
+                                        double area3;
+                                        
+                                        System.out.println("Enter Px1 value -> ");
+                                        px111 = input.nextDouble();
+                                        System.out.println("Enter Py1 value -> ");
+                                        py111 = input.nextDouble();
+                                        System.out.println("Enter Px2 value -> ");
+                                        px222 = input.nextDouble();
+                                        System.out.println("Enter Py2 value -> ");
+                                        py222 = input.nextDouble();
+                                        System.out.println("Enter Px3 value -> ");
+                                        px333 = input.nextDouble();
+                                        System.out.println("Enter Py3 value -> ");
+                                        py333 = input.nextDouble();
+                                        System.out.println("Enter Px4 value -> ");
+                                        px444 = input.nextDouble();
+                                        System.out.println("Enter Py4 value -> ");
+                                        py444 = input.nextDouble();
+                                        System.out.println("Enter Px5 value -> ");
+                                        px555 = input.nextDouble();
+                                        System.out.println("Enter Py5 value -> ");
+                                        py555 = input.nextDouble();
+                                        
+                                        area3 = (Math.sqrt((px222 - px111)*(px222 - px111)+(py222 - py111)*(py222 - py111))
+                                                *Math.sqrt((px333 - px222)*(px333 - px222)+(py333 - py222)*(py333 - py222)))/2
+                                                +(Math.sqrt((px444 - px333)*(px444 - px333)+(py444 - py333)*(py444 - py333))
+                                                *Math.sqrt((px555 - px444)*(px555 - px444)+(py555 - py444)*(py555 - py444)))/2;                                               
+                                        System.out.println("The Area is: \n"
+                                        + area3);
+                                        break;
+                                        
+                                                
+                                    case 0:
+                                        System.out.println("Good Luck \n");
+                                        System.exit(0);
+                                        break;
+                                    default:
+                                        System.out.println("Invalid option \n");
+                                        break;
+                                                        
+                                } 
+                            }while(option != 3);
                                     
-
+                            
+                            
+                        case 0:
+                            System.out.println("Good Luck \n");
+                            System.exit(0);
+                            break;
+                        default:
+                            System.out.println("Invalid option \n");
+                            break;
+                        
+                    }
+                
+                } while(option != 6); 
+            
+            
+            
+            case 0:
+                System.out.println("Thanks for using our Aplication ");
+                System.out.println("Good Luck");
+                System.exit(0);
+                break;
+            default:
+                System.out.println("Invalid option \n");
+                break;                    
         }
+    } while(option != 2);       
+    
+    
+    
+    }
     
 }
