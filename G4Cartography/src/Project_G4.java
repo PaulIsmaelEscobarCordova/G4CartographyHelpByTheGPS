@@ -463,6 +463,7 @@ public class G4Cartography {
                 + per);
     }
 
+
     public static void turnLongitudDDtoUTM(Scanner input) {
         double longitud;
         double y;
@@ -481,6 +482,7 @@ public class G4Cartography {
         x = -(latitud * 2261291.013);
         System.out.println("The X Coordinate is: \n"
                 + x);
+    
     }
 
     public static void turnLongitudDMStoDD(Scanner input) {
@@ -513,6 +515,7 @@ public class G4Cartography {
         System.out.println("The Decimal Degrees of Latitude is: \n"
                 + dd);
     }
+    
 
 }
         
