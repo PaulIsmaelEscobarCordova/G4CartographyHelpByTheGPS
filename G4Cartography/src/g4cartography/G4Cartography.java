@@ -516,7 +516,81 @@ public class G4Cartography {
                 + dd);
     }
     
+ public static void computeArea5Points(Scanner input) {
+        double px1;
+        double px2;
+        double px3;
+        double px4;
+        double px5;
+        double py1;
+        double py2;
+        double py3;
+        double py4;
+        double py5;
+        double area;
 
+        System.out.println("Enter Px1 value -> ");
+        px1 = input.nextDouble();
+        System.out.println("Enter Py1 value -> ");
+        py1 = input.nextDouble();
+        System.out.println("Enter Px2 value -> ");
+        px2 = input.nextDouble();
+        System.out.println("Enter Py2 value -> ");
+        py2 = input.nextDouble();
+        System.out.println("Enter Px3 value -> ");
+        px3 = input.nextDouble();
+        System.out.println("Enter Py3 value -> ");
+        py3 = input.nextDouble();
+        System.out.println("Enter Px4 value -> ");
+        px4 = input.nextDouble();
+        System.out.println("Enter Py4 value -> ");
+        py4 = input.nextDouble();
+        System.out.println("Enter Px5 value -> ");
+        px5 = input.nextDouble();
+        System.out.println("Enter Py5 value -> ");
+        py5 = input.nextDouble();
+
+        area = (Math.sqrt((px2 - px1) * (px2 - px1) + (py2 - py1) * (py2 - py1))
+                * Math.sqrt((px3 - px2) * (px3 - px2) + (py3 - py2) * (py3 - py2))) / 2
+                + (Math.sqrt((px4 - px3) * (px4 - px3) + (py4 - py3) * (py4 - py3))
+                * Math.sqrt((px5 - px4) * (px5 - px4) + (py5 - py4) * (py5 - py4))) / 2;
+        System.out.println("The Area is: \n"
+                + area);
+    }
+
+    public static void computeArea4Points(Scanner input) {
+        double px1;
+        double px2;
+        double px3;
+        double px4;
+        double py1;
+        double py2;
+        double py3;
+        double py4;
+        double area;
+
+        System.out.println("Enter Px1 value -> ");
+        px1 = input.nextDouble();
+        System.out.println("Enter Py1 value -> ");
+        py1 = input.nextDouble();
+        System.out.println("Enter Px2 value -> ");
+        px2 = input.nextDouble();
+        System.out.println("Enter Py2 value -> ");
+        py2 = input.nextDouble();
+        System.out.println("Enter Px3 value -> ");
+        px3 = input.nextDouble();
+        System.out.println("Enter Py3 value -> ");
+        py3 = input.nextDouble();
+        System.out.println("Enter Px4 value -> ");
+        px4 = input.nextDouble();
+        System.out.println("Enter Py4 value -> ");
+        py4 = input.nextDouble();
+
+        area = Math.sqrt((px2 - px1) * (px2 - px1) + (py2 - py1) * (py2 - py1))
+                * Math.sqrt((px3 - px2) * (px3 - px2) + (py3 - py2) * (py3 - py2));
+        System.out.println("The Area is: \n"
+                + area);
+    }
 }
         
         
