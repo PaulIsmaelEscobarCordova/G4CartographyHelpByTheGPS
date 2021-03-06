@@ -58,6 +58,8 @@ public class G4Cartography {
                                             System.out.println("Enter Seconds Value -> ");
                                             segundos = input.nextDouble();
                                             dd = turnLatitudeDMStoDD(grados, minutos, segundos);
+                                            System.out.println("The Decimal Degrees of Latitude is: \n"
+                                            + dd);
                                             break;
 
                                         case 2:
@@ -68,6 +70,7 @@ public class G4Cartography {
                                             System.out.println("Enter Seconds Value -> ");
                                             segundos = input.nextDouble();
                                             dd = turnLongitudDMStoDD(grados, minutos, segundos);
+                                            System.out.println("The Decimal Degrees of Length is: \n" + dd);
                                             break;
 
                                         case 0:
@@ -90,12 +93,16 @@ public class G4Cartography {
                                             System.out.println("Enter Latitude Value -> ");
                                             x = input.nextDouble();
                                             latitud = turnLatitudDDtoUTM(x);
+                                            System.out.println("The X Coordinate is: \n"
+                                            + latitud);
                                             break;
 
                                         case 2:
                                             System.out.println("Enter Length Value -> ");
                                             y = input.nextDouble();
                                             longitud = turnLongitudDDtoUTM(y);
+                                            System.out.println("The Y Coordinate is: \n"
+                                            + longitud);
                                             break;
 
                                         case 0:
@@ -142,6 +149,8 @@ public class G4Cartography {
                                             py3 = input.nextDouble();
                                             per = computePerimeter3Points(px1, px2, px3, py1,
                                                     py2, py3);
+                                            System.out.println("The Perimeter is: \n"
+                                            + per);
                                             break;
 
                                         case 2:
@@ -158,9 +167,10 @@ public class G4Cartography {
                                             System.out.println("Enter the Fourth Point: ");
                                             px4 = input.nextDouble();
                                             py4 = input.nextDouble();
-
                                             per = computePerimeter4Points(px1, px2, px3, px4,
                                                     py1, py2, py3, py4);
+                                            System.out.println("The Perimeter is: \n"
+                                            + per);
                                             break;
 
                                         case 3:
@@ -181,6 +191,8 @@ public class G4Cartography {
                                             py5 = input.nextDouble();
                                             per = computePerimeter5Points(px1, px2, px3, px4,
                                                     px5, py1, py2, py3, py4, py5);
+                                            System.out.println("The Perimeter is: \n"
+                                            + per);
                                             break;
 
                                         case 0:
@@ -212,6 +224,8 @@ public class G4Cartography {
                                             py3 = input.nextDouble();
                                             area = computeArea3Points(px1, px2, px3, py1,
                                                     py2, py3);
+                                            System.out.println("The Area is: \n"
+                                            + area / 2);
                                             break;
 
                                         case 2:
@@ -229,6 +243,8 @@ public class G4Cartography {
                                             py4 = input.nextDouble();
                                             area = computeArea4Points(px1, px2, px3, px4, py1,
                                                     py2, py3, py4);
+                                            System.out.println("The Area is: \n"
+                                            + area);
                                             break;
 
                                         case 3:
@@ -249,6 +265,8 @@ public class G4Cartography {
                                             py5 = input.nextDouble();
                                             area = computeArea5Points(px1, px2, px3, px4, px5,
                                                     py1, py2, py3, py4, py5);
+                                            System.out.println("The Area is: \n"
+                                            + area);
                                             break;
 
                                         case 0:
@@ -283,31 +301,24 @@ public class G4Cartography {
     public static double turnLatitudeDMStoDD(double grados, double minutos, double segundos){
         double dd;
         dd = -(grados + (minutos / 60) + (segundos / 3600));
-        System.out.println("The Decimal Degrees of Latitude is: \n"
-                + dd);
         return dd;
     }
 
     public static double turnLongitudDMStoDD(double grados, double minutos, double segundos){
         double dd;
         dd = -(grados + (minutos / 60) + (segundos / 3600));
-        System.out.println("The Decimal Degrees of Length is: \n" + dd);
         return dd;
     }
 
     public static double turnLatitudDDtoUTM(double x){
         double latitud;
         latitud = -(x * 2261291.013);
-        System.out.println("The X Coordinate is: \n"
-                + latitud);
         return latitud;
     }
 
     public static double turnLongitudDDtoUTM(double y){
         double longitud;
         longitud = -(y * 126798.6481);
-        System.out.println("The Y Coordinate is: \n"
-                + longitud);
         return longitud;
     }
 
@@ -317,8 +328,6 @@ public class G4Cartography {
         per = Math.sqrt((px2 - px1) * (px2 - px1) + (py2 - py1) * (py2 - py1))
                 + Math.sqrt((px3 - px2) * (px3 - px2) + (py3 - py2) * (py3 - py2))
                 + Math.sqrt((px1 - px3) * (px1 - px3) + (py1 - py3) * (py1 - py3));
-        System.out.println("The Perimeter is: \n"
-                + per);
         return per;
     }
 
@@ -329,8 +338,6 @@ public class G4Cartography {
                 + Math.sqrt((px3 - px2) * (px3 - px2) + (py3 - py2) * (py3 - py2))
                 + Math.sqrt((px4 - px3) * (px4 - px3) + (py4 - py3) * (py4 - py3))
                 + Math.sqrt((px1 - px4) * (px1 - px4) + (py1 - py4) * (py1 - py4));
-        System.out.println("The Perimeter is: \n"
-                + per);
         return per;
     }
 
@@ -343,8 +350,6 @@ public class G4Cartography {
                 + Math.sqrt((px4 - px3) * (px4 - px3) + (py4 - py3) * (py4 - py3))
                 + Math.sqrt((px5 - px4) * (px5 - px4) + (py5 - py4) * (py5 - py4))
                 + Math.sqrt((px1 - px5) * (px1 - px5) + (py1 - py5) * (py1 - py5));
-        System.out.println("The Perimeter is: \n"
-                + per);
         return per;
     }
 
@@ -353,8 +358,6 @@ public class G4Cartography {
         double area;
         area = Math.sqrt((px2 - px1) * (px2 - px1) + (py2 - py1) * (py2 - py1))
                 * Math.sqrt((px3 - px2) * (px3 - px2) + (py3 - py2) * (py3 - py2));
-        System.out.println("The Area is: \n"
-                + area / 2);
         return area;
     }
 
@@ -363,8 +366,6 @@ public class G4Cartography {
         double area;
         area = Math.sqrt((px2 - px1) * (px2 - px1) + (py2 - py1) * (py2 - py1))
                 * Math.sqrt((px3 - px2) * (px3 - px2) + (py3 - py2) * (py3 - py2));
-        System.out.println("The Area is: \n"
-                + area);
         return area;
     }
 
@@ -376,8 +377,6 @@ public class G4Cartography {
                 * Math.sqrt((px3 - px2) * (px3 - px2) + (py3 - py2) * (py3 - py2))) / 2
                 + (Math.sqrt((px4 - px3) * (px4 - px3) + (py4 - py3) * (py4 - py3))
                 * Math.sqrt((px5 - px4) * (px5 - px4) + (py5 - py4) * (py5 - py4))) / 2;
-        System.out.println("The Area is: \n"
-                + area);
         return area;
     }
 
