@@ -8,6 +8,26 @@ public class G4Cartography {
         Scanner input = new Scanner(System.in);
         boolean mainLoop = true;
         int option;
+        double grados;
+        double minutos;
+        double segundos;
+        double dd;
+        double latitud;
+        double x;
+        double longitud;
+        double y;
+        double px1;
+        double px2;
+        double px3;
+        double px4;
+        double px5;
+        double py1;
+        double py2;
+        double py3;
+        double py4;
+        double py5;
+        double per;
+        double area;
 
         do {
             printBanner();
@@ -18,7 +38,8 @@ public class G4Cartography {
                 case 1:
 
                     do {
-                        option = printConversionMenu(input);
+                        printConversionMenu();
+                        option = input.nextInt();
 
                         switch (option) {
 
@@ -30,11 +51,23 @@ public class G4Cartography {
                                     switch (option) {
 
                                         case 1:
-                                            turnLatitudeDMStoDD(input);
+                                            System.out.println("Enter Degree Value -> ");
+                                            grados = input.nextDouble();
+                                            System.out.println("Enter Minute Value -> ");
+                                            minutos = input.nextDouble();
+                                            System.out.println("Enter Seconds Value -> ");
+                                            segundos = input.nextDouble();
+                                            dd = turnLatitudeDMStoDD(grados, minutos, segundos);
                                             break;
 
                                         case 2:
-                                            turnLongitudDMStoDD(input);
+                                            System.out.println("Enter Degree Value -> ");
+                                            grados = input.nextDouble();
+                                            System.out.println("Enter Minute Value -> ");
+                                            minutos = input.nextDouble();
+                                            System.out.println("Enter Seconds Value -> ");
+                                            segundos = input.nextDouble();
+                                            dd = turnLongitudDMStoDD(grados, minutos, segundos);
                                             break;
 
                                         case 0:
@@ -54,11 +87,15 @@ public class G4Cartography {
                                     switch (option) {
 
                                         case 1:
-                                            turnLatitudDDtoUTM(input);
+                                            System.out.println("Enter Latitude Value -> ");
+                                            x = input.nextDouble();
+                                            latitud = turnLatitudDDtoUTM(x);
                                             break;
 
                                         case 2:
-                                            turnLongitudDDtoUTM(input);
+                                            System.out.println("Enter Length Value -> ");
+                                            y = input.nextDouble();
+                                            longitud = turnLongitudDDtoUTM(y);
                                             break;
 
                                         case 0:
@@ -94,15 +131,56 @@ public class G4Cartography {
                                     switch (option) {
 
                                         case 1:
-                                            computePerimeter3Points(input);
+                                            System.out.println("Enter the First Point: ");
+                                            px1 = input.nextDouble();
+                                            py1 = input.nextDouble();
+                                            System.out.println("Enter the Second Point: ");
+                                            px2 = input.nextDouble();
+                                            py2 = input.nextDouble();
+                                            System.out.println("Enter the Third Point: ");
+                                            px3 = input.nextDouble();
+                                            py3 = input.nextDouble();
+                                            per = computePerimeter3Points(px1, px2, px3, py1,
+                                                    py2, py3);
                                             break;
 
                                         case 2:
-                                            computePerimeter4Points(input);
+
+                                            System.out.println("Enter the First Point: ");
+                                            px1 = input.nextDouble();
+                                            py1 = input.nextDouble();
+                                            System.out.println("Enter the Second Point: ");
+                                            px2 = input.nextDouble();
+                                            py2 = input.nextDouble();
+                                            System.out.println("Enter the Third Point: ");
+                                            px3 = input.nextDouble();
+                                            py3 = input.nextDouble();
+                                            System.out.println("Enter the Fourth Point: ");
+                                            px4 = input.nextDouble();
+                                            py4 = input.nextDouble();
+
+                                            per = computePerimeter4Points(px1, px2, px3, px4,
+                                                    py1, py2, py3, py4);
                                             break;
 
                                         case 3:
-                                            computePerimeter5Points(input);
+                                            System.out.println("Enter the First Point: ");
+                                            px1 = input.nextDouble();
+                                            py1 = input.nextDouble();
+                                            System.out.println("Enter the Second Point: ");
+                                            px2 = input.nextDouble();
+                                            py2 = input.nextDouble();
+                                            System.out.println("Enter Third the  Point: ");
+                                            px3 = input.nextDouble();
+                                            py3 = input.nextDouble();
+                                            System.out.println("Enter the Fourth Point: ");
+                                            px4 = input.nextDouble();
+                                            py4 = input.nextDouble();
+                                            System.out.println("Enter the Fifth Point: ");
+                                            px5 = input.nextDouble();
+                                            py5 = input.nextDouble();
+                                            per = computePerimeter5Points(px1, px2, px3, px4,
+                                                    px5, py1, py2, py3, py4, py5);
                                             break;
 
                                         case 0:
@@ -123,15 +201,54 @@ public class G4Cartography {
                                     switch (option) {
 
                                         case 1:
-                                            computeArea3Points(input);
+                                            System.out.println("Enter the First Point: ");
+                                            px1 = input.nextDouble();
+                                            py1 = input.nextDouble();
+                                            System.out.println("Enter the Second Point: ");
+                                            px2 = input.nextDouble();
+                                            py2 = input.nextDouble();
+                                            System.out.println("Enter the Third Point: ");
+                                            px3 = input.nextDouble();
+                                            py3 = input.nextDouble();
+                                            area = computeArea3Points(px1, px2, px3, py1,
+                                                    py2, py3);
                                             break;
 
                                         case 2:
-                                            computeArea4Points(input);
+                                            System.out.println("Enter the First Point: ");
+                                            px1 = input.nextDouble();
+                                            py1 = input.nextDouble();
+                                            System.out.println("Enter the Second Point: ");
+                                            px2 = input.nextDouble();
+                                            py2 = input.nextDouble();
+                                            System.out.println("Enter the Third Point: ");
+                                            px3 = input.nextDouble();
+                                            py3 = input.nextDouble();
+                                            System.out.println("Enter the Fourth Point: ");
+                                            px4 = input.nextDouble();
+                                            py4 = input.nextDouble();
+                                            area = computeArea4Points(px1, px2, px3, px4, py1,
+                                                    py2, py3, py4);
                                             break;
 
                                         case 3:
-                                            computeArea5Points(input);
+                                            System.out.println("Enter the First Point: ");
+                                            px1 = input.nextDouble();
+                                            py1 = input.nextDouble();
+                                            System.out.println("Enter the Second Point: ");
+                                            px2 = input.nextDouble();
+                                            py2 = input.nextDouble();
+                                            System.out.println("Enter Third the  Point: ");
+                                            px3 = input.nextDouble();
+                                            py3 = input.nextDouble();
+                                            System.out.println("Enter the Fourth Point: ");
+                                            px4 = input.nextDouble();
+                                            py4 = input.nextDouble();
+                                            System.out.println("Enter the Fifth Point: ");
+                                            px5 = input.nextDouble();
+                                            py5 = input.nextDouble();
+                                            area = computeArea5Points(px1, px2, px3, px4, px5,
+                                                    py1, py2, py3, py4, py5);
                                             break;
 
                                         case 0:
@@ -163,17 +280,126 @@ public class G4Cartography {
 
     }
 
-    public static void printInvalidOption() {
+    public static double turnLatitudeDMStoDD(double grados, double minutos, double segundos){
+        double dd;
+        dd = -(grados + (minutos / 60) + (segundos / 3600));
+        System.out.println("The Decimal Degrees of Latitude is: \n"
+                + dd);
+        return dd;
+    }
+
+    public static double turnLongitudDMStoDD(double grados, double minutos, double segundos){
+        double dd;
+        dd = -(grados + (minutos / 60) + (segundos / 3600));
+        System.out.println("The Decimal Degrees of Length is: \n" + dd);
+        return dd;
+    }
+
+    public static double turnLatitudDDtoUTM(double x){
+        double latitud;
+        latitud = -(x * 2261291.013);
+        System.out.println("The X Coordinate is: \n"
+                + latitud);
+        return latitud;
+    }
+
+    public static double turnLongitudDDtoUTM(double y){
+        double longitud;
+        longitud = -(y * 126798.6481);
+        System.out.println("The Y Coordinate is: \n"
+                + longitud);
+        return longitud;
+    }
+
+    public static double computePerimeter3Points(double px1, double px2, double px3,
+            double py1, double py2, double py3){
+        double per;
+        per = Math.sqrt((px2 - px1) * (px2 - px1) + (py2 - py1) * (py2 - py1))
+                + Math.sqrt((px3 - px2) * (px3 - px2) + (py3 - py2) * (py3 - py2))
+                + Math.sqrt((px1 - px3) * (px1 - px3) + (py1 - py3) * (py1 - py3));
+        System.out.println("The Perimeter is: \n"
+                + per);
+        return per;
+    }
+
+    public static double computePerimeter4Points(double px1, double px2, double px3,
+            double px4, double py1, double py2, double py3, double py4){
+        double per;
+        per = Math.sqrt((px2 - px1) * (px2 - px1) + (py2 - py1) * (py2 - py1))
+                + Math.sqrt((px3 - px2) * (px3 - px2) + (py3 - py2) * (py3 - py2))
+                + Math.sqrt((px4 - px3) * (px4 - px3) + (py4 - py3) * (py4 - py3))
+                + Math.sqrt((px1 - px4) * (px1 - px4) + (py1 - py4) * (py1 - py4));
+        System.out.println("The Perimeter is: \n"
+                + per);
+        return per;
+    }
+
+    public static double computePerimeter5Points(double px1, double px2, double px3,
+            double px4, double px5, double py1, double py2, double py3, double py4,
+            double py5){
+        double per;
+        per = Math.sqrt((px2 - px1) * (px2 - px1) + (py2 - py1) * (py2 - py1))
+                + Math.sqrt((px3 - px2) * (px3 - px2) + (py3 - py2) * (py3 - py2))
+                + Math.sqrt((px4 - px3) * (px4 - px3) + (py4 - py3) * (py4 - py3))
+                + Math.sqrt((px5 - px4) * (px5 - px4) + (py5 - py4) * (py5 - py4))
+                + Math.sqrt((px1 - px5) * (px1 - px5) + (py1 - py5) * (py1 - py5));
+        System.out.println("The Perimeter is: \n"
+                + per);
+        return per;
+    }
+
+    public static double computeArea3Points(double px1, double px2, double px3,
+            double py1, double py2, double py3){
+        double area;
+        area = Math.sqrt((px2 - px1) * (px2 - px1) + (py2 - py1) * (py2 - py1))
+                * Math.sqrt((px3 - px2) * (px3 - px2) + (py3 - py2) * (py3 - py2));
+        System.out.println("The Area is: \n"
+                + area / 2);
+        return area;
+    }
+
+    public static double computeArea4Points(double px1, double px2, double px3,
+            double px4, double py1, double py2, double py3, double py4){
+        double area;
+        area = Math.sqrt((px2 - px1) * (px2 - px1) + (py2 - py1) * (py2 - py1))
+                * Math.sqrt((px3 - px2) * (px3 - px2) + (py3 - py2) * (py3 - py2));
+        System.out.println("The Area is: \n"
+                + area);
+        return area;
+    }
+
+    public static double computeArea5Points(double px1, double px2, double px3,
+            double px4, double px5, double py1, double py2, double py3, double py4,
+            double py5){
+        double area;
+        area = (Math.sqrt((px2 - px1) * (px2 - px1) + (py2 - py1) * (py2 - py1))
+                * Math.sqrt((px3 - px2) * (px3 - px2) + (py3 - py2) * (py3 - py2))) / 2
+                + (Math.sqrt((px4 - px3) * (px4 - px3) + (py4 - py3) * (py4 - py3))
+                * Math.sqrt((px5 - px4) * (px5 - px4) + (py5 - py4) * (py5 - py4))) / 2;
+        System.out.println("The Area is: \n"
+                + area);
+        return area;
+    }
+
+    public static void printConversionMenu(){
+        System.out.println("Coordinate Conversion");
+        System.out.println("Please Choose the Number -> ");
+        System.out.println("1. ==>D.M.S.(Degrees, Minutes, Seconds) to Decimal Degrees ");
+        System.out.println("2. ==>Decimal Degrees to UTM (X,Y)");
+        System.out.println("0. ==> Exit");
+    }
+
+    public static void printInvalidOption(){
         System.out.println("Invalid option \n");
     }
 
-    public static void printGoodLuck() {
+    public static void printGoodLuck(){
         System.out.println("Thanks for using our Aplication ");
         System.out.println("Good Luck \n");
         System.exit(0);
     }
 
-    public static void printAreaMenu() {
+    public static void printAreaMenu(){
         System.out.println("Area Calculator");
         System.out.println("Please Choose the Number -> ");
         System.out.println("1. ==> 3 Points");
@@ -182,7 +408,7 @@ public class G4Cartography {
         System.out.println("0. ==> Exit");
     }
 
-    public static void printPerimeterMenu() {
+    public static void printPerimeterMenu(){
         System.out.println("Perimeter Calculator");
         System.out.println("Please Choose the Number -> ");
         System.out.println("1. ==> 3 Points");
@@ -191,7 +417,7 @@ public class G4Cartography {
         System.out.println("0. ==> Exit");
     }
 
-    public static void printSurfaceAndPerimeterMenu() {
+    public static void printSurfaceAndPerimeterMenu(){
         System.out.println("Surface Area and Perimeter Calculator");
         System.out.println("Please Choose the Number ->  ");
         System.out.println("1. -> Perimeter");
@@ -199,7 +425,7 @@ public class G4Cartography {
         System.out.println("0. -> Exit");
     }
 
-    public static void printDDtoUTMMenu() {
+    public static void printDDtoUTMMenu(){
         System.out.println("Decimal Degrees to UTM (X,Y)");
         System.out.println("Please Choose the Number -> ");
         System.out.println("1. ==> Latitude");
@@ -207,7 +433,7 @@ public class G4Cartography {
         System.out.println("0. ==> Exit");
     }
 
-    public static void printDMStoDDMenu() {
+    public static void printDMStoDDMenu(){
         System.out.println("D.M.S.(Degrees, Minutes, Seconds) to Decimal Degrees");
         System.out.println("Please Choose the Number -> ");
         System.out.println("1. ==> Latitude");
@@ -215,18 +441,7 @@ public class G4Cartography {
         System.out.println("0. ==> Exit");
     }
 
-    public static int printConversionMenu(Scanner input) {
-        int option;
-        System.out.println("Coordinate Conversion");
-        System.out.println("Please Choose the Number -> ");
-        System.out.println("1. ==>D.M.S.(Degrees, Minutes, Seconds) to Decimal Degrees ");
-        System.out.println("2. ==>Decimal Degrees to UTM (X,Y)");
-        System.out.println("0. ==> Exit");
-        option = input.nextInt();
-        return option;
-    }
-
-    public static void printBanner() {
+    public static void printBanner(){
         System.out.println(""
                 + " ==============================================================================================\n"
                 + "| ******************************************************************************************** |\n"
@@ -252,345 +467,5 @@ public class G4Cartography {
                 + "| ********************************************************************** \" LOS GPS \" ********* |\n"
                 + " ==============================================================================================");
     }
-    
-    public static void computeArea5Points(Scanner input) {
-        double px1;
-        double px2;
-        double px3;
-        double px4;
-        double px5;
-        double py1;
-        double py2;
-        double py3;
-        double py4;
-        double py5;
-        double area;
 
-        System.out.println("Enter Px1 value -> ");
-        px1 = input.nextDouble();
-        System.out.println("Enter Py1 value -> ");
-        py1 = input.nextDouble();
-        System.out.println("Enter Px2 value -> ");
-        px2 = input.nextDouble();
-        System.out.println("Enter Py2 value -> ");
-        py2 = input.nextDouble();
-        System.out.println("Enter Px3 value -> ");
-        px3 = input.nextDouble();
-        System.out.println("Enter Py3 value -> ");
-        py3 = input.nextDouble();
-        System.out.println("Enter Px4 value -> ");
-        px4 = input.nextDouble();
-        System.out.println("Enter Py4 value -> ");
-        py4 = input.nextDouble();
-        System.out.println("Enter Px5 value -> ");
-        px5 = input.nextDouble();
-        System.out.println("Enter Py5 value -> ");
-        py5 = input.nextDouble();
-
-        area = (Math.sqrt((px2 - px1) * (px2 - px1) + (py2 - py1) * (py2 - py1))
-                * Math.sqrt((px3 - px2) * (px3 - px2) + (py3 - py2) * (py3 - py2))) / 2
-                + (Math.sqrt((px4 - px3) * (px4 - px3) + (py4 - py3) * (py4 - py3))
-                * Math.sqrt((px5 - px4) * (px5 - px4) + (py5 - py4) * (py5 - py4))) / 2;
-        System.out.println("The Area is: \n"
-                + area);
-    }
-
-    public static void computeArea4Points(Scanner input) {
-        double px1;
-        double px2;
-        double px3;
-        double px4;
-        double py1;
-        double py2;
-        double py3;
-        double py4;
-        double area;
-
-        System.out.println("Enter Px1 value -> ");
-        px1 = input.nextDouble();
-        System.out.println("Enter Py1 value -> ");
-        py1 = input.nextDouble();
-        System.out.println("Enter Px2 value -> ");
-        px2 = input.nextDouble();
-        System.out.println("Enter Py2 value -> ");
-        py2 = input.nextDouble();
-        System.out.println("Enter Px3 value -> ");
-        px3 = input.nextDouble();
-        System.out.println("Enter Py3 value -> ");
-        py3 = input.nextDouble();
-        System.out.println("Enter Px4 value -> ");
-        px4 = input.nextDouble();
-        System.out.println("Enter Py4 value -> ");
-        py4 = input.nextDouble();
-
-        area = Math.sqrt((px2 - px1) * (px2 - px1) + (py2 - py1) * (py2 - py1))
-                * Math.sqrt((px3 - px2) * (px3 - px2) + (py3 - py2) * (py3 - py2));
-        System.out.println("The Area is: \n"
-                + area);
-    }
-
-    public static void computeArea3Points(Scanner input) {
-        double px1;
-        double px2;
-        double px3;
-        double py1;
-        double py2;
-        double py3;
-        double area;
-        System.out.println("Enter Px1 value -> ");
-        px1 = input.nextDouble();
-        System.out.println("Enter Py1 value -> ");
-        py1 = input.nextDouble();
-        System.out.println("Enter Px2 value -> ");
-        px2 = input.nextDouble();
-        System.out.println("Enter Py2 value -> ");
-        py2 = input.nextDouble();
-        System.out.println("Enter Px3 value -> ");
-        px3 = input.nextDouble();
-        System.out.println("Enter Py3 value -> ");
-        py3 = input.nextDouble();
-
-        area = Math.sqrt((px2 - px1) * (px2 - px1) + (py2 - py1) * (py2 - py1))
-                * Math.sqrt((px3 - px2) * (px3 - px2) + (py3 - py2) * (py3 - py2));
-
-        System.out.println("The Area is: \n"
-                + area / 2);
-    }
-
-    public static void computePerimeter5Points(Scanner input) {
-        double px1;
-        double px2;
-        double px3;
-        double px4;
-        double px5;
-        double py1;
-        double py2;
-        double py3;
-        double py4;
-        double py5;
-        double per;
-
-        System.out.println("Enter Px1 value -> ");
-        px1 = input.nextDouble();
-        System.out.println("Enter Py1 value -> ");
-        py1 = input.nextDouble();
-        System.out.println("Enter Px2 value -> ");
-        px2 = input.nextDouble();
-        System.out.println("Enter Py2 value -> ");
-        py2 = input.nextDouble();
-        System.out.println("Enter Px3 value -> ");
-        px3 = input.nextDouble();
-        System.out.println("Enter Py3 value -> ");
-        py3 = input.nextDouble();
-        System.out.println("Enter Px4 value -> ");
-        px4 = input.nextDouble();
-        System.out.println("Enter Py4 value -> ");
-        py4 = input.nextDouble();
-        System.out.println("Enter Px5 value -> ");
-        px5 = input.nextDouble();
-        System.out.println("Enter Py5 value -> ");
-        py5 = input.nextDouble();
-
-        per = Math.sqrt((px2 - px1) * (px2 - px1) + (py2 - py1) * (py2 - py1))
-                + Math.sqrt((px3 - px2) * (px3 - px2) + (py3 - py2) * (py3 - py2))
-                + Math.sqrt((px4 - px3) * (px4 - px3) + (py4 - py3) * (py4 - py3))
-                + Math.sqrt((px5 - px4) * (px5 - px4) + (py5 - py4) * (py5 - py4))
-                + Math.sqrt((px1 - px5) * (px1 - px5) + (py1 - py5) * (py1 - py5));
-        System.out.println("The Perimeter is: \n"
-                + per);
-    }
-
-    public static void computePerimeter4Points(Scanner input) {
-        double px1;
-        double px2;
-        double px3;
-        double px4;
-        double py1;
-        double py2;
-        double py3;
-        double py4;
-        double per;
-
-        System.out.println("Enter Px1 value -> ");
-        px1 = input.nextDouble();
-        System.out.println("Enter Py1 value -> ");
-        py1 = input.nextDouble();
-        System.out.println("Enter Px2 value -> ");
-        px2 = input.nextDouble();
-        System.out.println("Enter Py2 value -> ");
-        py2 = input.nextDouble();
-        System.out.println("Enter Px3 value -> ");
-        px3 = input.nextDouble();
-        System.out.println("Enter Py3 value -> ");
-        py3 = input.nextDouble();
-        System.out.println("Enter Px4 value -> ");
-        px4 = input.nextDouble();
-        System.out.println("Enter Py4 value -> ");
-        py4 = input.nextDouble();
-
-        per = Math.sqrt((px2 - px1) * (px2 - px1) + (py2 - py1) * (py2 - py1))
-                + Math.sqrt((px3 - px2) * (px3 - px2) + (py3 - py2) * (py3 - py2))
-                + Math.sqrt((px4 - px3) * (px4 - px3) + (py4 - py3) * (py4 - py3))
-                + Math.sqrt((px1 - px4) * (px1 - px4) + (py1 - py4) * (py1 - py4));
-        System.out.println("The Perimeter is: \n"
-                + per);
-    }
-
-    public static void computePerimeter3Points(Scanner input) {
-        double px1;
-        double px2;
-        double px3;
-        double py1;
-        double py2;
-        double py3;
-        double per;
-        System.out.println("Enter Px1 value -> ");
-        px1 = input.nextDouble();
-        System.out.println("Enter Py1 value -> ");
-        py1 = input.nextDouble();
-        System.out.println("Enter Px2 value -> ");
-        px2 = input.nextDouble();
-        System.out.println("Enter Py2 value -> ");
-        py2 = input.nextDouble();
-        System.out.println("Enter Px3 value -> ");
-        px3 = input.nextDouble();
-        System.out.println("Enter Py3 value -> ");
-        py3 = input.nextDouble();
-        per = Math.sqrt((px2 - px1) * (px2 - px1) + (py2 - py1) * (py2 - py1))
-                + Math.sqrt((px3 - px2) * (px3 - px2) + (py3 - py2) * (py3 - py2))
-                + Math.sqrt((px1 - px3) * (px1 - px3) + (py1 - py3) * (py1 - py3));
-        System.out.println("The Perimeter is: \n"
-                + per);
-    }
-
-
-    public static void turnLongitudDDtoUTM(Scanner input) {
-        double longitud;
-        double y;
-        System.out.println("Enter Length Value -> ");
-        longitud = input.nextDouble();
-        y = -(longitud * 126798.6481);
-        System.out.println("The Y Coordinate is: \n"
-                + y);
-    }
-
-    public static void turnLatitudDDtoUTM(Scanner input) {
-        double latitud;
-        double x;
-        System.out.println("Enter Latitude Value -> ");
-        latitud = input.nextDouble();
-        x = -(latitud * 2261291.013);
-        System.out.println("The X Coordinate is: \n"
-                + x);
-    
-    }
-
-    public static void turnLongitudDMStoDD(Scanner input) {
-        double grados;
-        double minutos;
-        double segundos;
-        double dd;
-        System.out.println("Enter Degree Value -> ");
-        grados = input.nextDouble();
-        System.out.println("Enter Minute Value -> ");
-        minutos = input.nextDouble();
-        System.out.println("Enter Seconds Value -> ");
-        segundos = input.nextDouble();
-        dd = -(grados + (minutos / 60) + (segundos / 3600));
-        System.out.println("The Decimal Degrees of Length is: \n" + dd);
-    }
-
-    public static void turnLatitudeDMStoDD(Scanner input) {
-        double grados;
-        double minutos;
-        double segundos;
-        double dd;
-        System.out.println("Enter Degree Value -> ");
-        grados = input.nextDouble();
-        System.out.println("Enter Minute Value -> ");
-        minutos = input.nextDouble();
-        System.out.println("Enter Seconds Value -> ");
-        segundos = input.nextDouble();
-        dd = -(grados + (minutos / 60) + (segundos / 3600));
-        System.out.println("The Decimal Degrees of Latitude is: \n"
-                + dd);
-    }
-    
- public static void computeArea5Points(Scanner input) {
-        double px1;
-        double px2;
-        double px3;
-        double px4;
-        double px5;
-        double py1;
-        double py2;
-        double py3;
-        double py4;
-        double py5;
-        double area;
-
-        System.out.println("Enter Px1 value -> ");
-        px1 = input.nextDouble();
-        System.out.println("Enter Py1 value -> ");
-        py1 = input.nextDouble();
-        System.out.println("Enter Px2 value -> ");
-        px2 = input.nextDouble();
-        System.out.println("Enter Py2 value -> ");
-        py2 = input.nextDouble();
-        System.out.println("Enter Px3 value -> ");
-        px3 = input.nextDouble();
-        System.out.println("Enter Py3 value -> ");
-        py3 = input.nextDouble();
-        System.out.println("Enter Px4 value -> ");
-        px4 = input.nextDouble();
-        System.out.println("Enter Py4 value -> ");
-        py4 = input.nextDouble();
-        System.out.println("Enter Px5 value -> ");
-        px5 = input.nextDouble();
-        System.out.println("Enter Py5 value -> ");
-        py5 = input.nextDouble();
-
-        area = (Math.sqrt((px2 - px1) * (px2 - px1) + (py2 - py1) * (py2 - py1))
-                * Math.sqrt((px3 - px2) * (px3 - px2) + (py3 - py2) * (py3 - py2))) / 2
-                + (Math.sqrt((px4 - px3) * (px4 - px3) + (py4 - py3) * (py4 - py3))
-                * Math.sqrt((px5 - px4) * (px5 - px4) + (py5 - py4) * (py5 - py4))) / 2;
-        System.out.println("The Area is: \n"
-                + area);
-    }
-
-    public static void computeArea4Points(Scanner input) {
-        double px1;
-        double px2;
-        double px3;
-        double px4;
-        double py1;
-        double py2;
-        double py3;
-        double py4;
-        double area;
-
-        System.out.println("Enter Px1 value -> ");
-        px1 = input.nextDouble();
-        System.out.println("Enter Py1 value -> ");
-        py1 = input.nextDouble();
-        System.out.println("Enter Px2 value -> ");
-        px2 = input.nextDouble();
-        System.out.println("Enter Py2 value -> ");
-        py2 = input.nextDouble();
-        System.out.println("Enter Px3 value -> ");
-        px3 = input.nextDouble();
-        System.out.println("Enter Py3 value -> ");
-        py3 = input.nextDouble();
-        System.out.println("Enter Px4 value -> ");
-        px4 = input.nextDouble();
-        System.out.println("Enter Py4 value -> ");
-        py4 = input.nextDouble();
-
-        area = Math.sqrt((px2 - px1) * (px2 - px1) + (py2 - py1) * (py2 - py1))
-                * Math.sqrt((px3 - px2) * (px3 - px2) + (py3 - py2) * (py3 - py2));
-        System.out.println("The Area is: \n"
-                + area);
-    }
 }
-        
-        
