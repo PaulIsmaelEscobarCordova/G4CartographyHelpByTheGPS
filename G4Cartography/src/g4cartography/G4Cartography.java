@@ -1,11 +1,13 @@
 
 package g4cartography;
+
 import java.util.Scanner;
+
 public class G4Cartography {
 
-   
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        
+   Scanner input = new Scanner(System.in);
         boolean mainLoop = true;
         int option;
         double grados;
